@@ -24,7 +24,7 @@ int main(int argc, char **argv) {
                                0,
                                NULL))
             {
-                fputs("FormatMessage failed\n", stderr);
+                fputs("SetConsoleOutputCP failed\n", stderr);
                 r = 2;
                 goto done;
             }
@@ -37,5 +37,5 @@ int main(int argc, char **argv) {
 
  done:
     printf("Active code page: %u\n", GetConsoleOutputCP());
-    return 0;
+    return r;
 }
